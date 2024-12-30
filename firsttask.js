@@ -1,6 +1,13 @@
 // zakat
-let x= (250*2.5)/100;
-console.log(x);
+let x = 250;  
+let zakatPercentage = 2.5 / 100; 
+
+if (x >= 4000) {
+    let zakat = x * zakatPercentage;  
+    console.log("Zakat for " + x + " is: " + zakat);  
+} else {
+    console.log("Zakat is not applicable for this amount.");  
+}
 
 /*
 Array Tasks : 
