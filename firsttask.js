@@ -1,12 +1,12 @@
 // zakat
-let x = 250;  
-let zakatPercentage = 2.5 / 100; 
+let x = 250;
+let zakatPercentage = 2.5 / 100;
 
 if (x >= 4000) {
-    let zakat = x * zakatPercentage;  
-    console.log("Zakat for " + x + " is: " + zakat);  
+  let zakat = x * zakatPercentage;
+  console.log("Zakat for " + x + " is: " + zakat);
 } else {
-    console.log("Zakat is not applicable for this amount.");  
+  console.log("Zakat is not applicable for this amount.");
 }
 
 /*
@@ -21,9 +21,8 @@ Correct the syntax error
 
 */
 
-let arrNum= [1 , 7 , 9 ,45];
-let arrString= ["Str" , "alex" , "moh" , "the" , "fox" , "over" , "lazy" , "dog"];
-
+let arrNum = [1, 7, 9, 45];
+let arrString = ["Str", "alex", "moh", "the", "fox", "over", "lazy", "dog"];
 
 /*
 2
@@ -32,11 +31,9 @@ var fruits=["Tomato","Banana","Watermelon"]
 
 */
 
-var fruits=["Tomato", "Banana", "Watermelon"];
-console.log(fruits.indexOf ("Tomato" , 0) );
-console.log(fruits.indexOf ("Banana" , 0) );
-
-
+var fruits = ["Tomato", "Banana", "Watermelon"];
+console.log(fruits.indexOf("Tomato"));
+console.log(fruits.indexOf("Banana"));
 
 /*
 3
@@ -45,13 +42,9 @@ Create an array represents your:
 2- Favorite Sport (3)
 3- Favorite Movie (2)
 */
-let Favorite_Food= ["Mansaf" , "Maqlobeh" , "shoshbarak"];
-let Favorite_Sport= ["Soccer" , "Tennis" , "Bodybuilding" , "Cycling"];
-let Favorite_Movie= ["The lord of the rings" , "the man from uncle" , "Fury"];
-
-
-
-
+let Favorite_Food = ["Mansaf", "Maqlobeh", "shoshbarak"];
+let Favorite_Sport = ["Soccer", "Tennis", "Bodybuilding", "Cycling"];
+let Favorite_Movie = ["The lord of the rings", "the man from uncle", "Fury"];
 
 /*
 4
@@ -59,14 +52,11 @@ Create a Variable to return the first element in an array
 Ex: firstOfArray([1,4,5]) => 1
 Ex: firstOfArray(["t","u","g","x"]) => "t"
 */
-let  firstOfArray=[1, 4 , 5];
-let first= firstOfArray [0];
+let firstOfArray = [1, 4, 5];
+let first = firstOfArray[0];
 
-let firstOfArray1=["t","u","g","x"];
-let first1= firstOfArray1 [0];
-
-
-
+let firstOfArray1 = ["t", "u", "g", "x"];
+let first1 = firstOfArray1[0];
 
 /*
 5
@@ -76,13 +66,11 @@ Ex: lastOfArray([1,4,5]) => 5
 Ex: lastOfArray(["t","u","g","x"]) => "x"
 */
 
+let lastOfArray = [1, 4, 5];
+let last = lastOfArray[2];
 
-let lastOfArray= [1,4,5];
-let last= lastOfArray[2];
-
-let lastOfArray1= ["t","u","g","x"];
-let last1= lastOfArray1[3];
-
+let lastOfArray1 = ["t", "u", "g", "x"];
+let last1 = lastOfArray1[3];
 
 /*
 6
@@ -92,11 +80,11 @@ var array = [0,5,7,9]
 => [1,3,4,6,8,9,10]
 */
 
-var array= [0,5,7,9];
+var array = [0, 5, 7, 9];
 array.shift();
 array.shift();
 array.shift();
-array.unshift(1,3,4,6,8);
+array.unshift(1, 3, 4, 6, 8);
 array.push(10);
 
 console.log(array);
@@ -108,7 +96,7 @@ Using the console try to figure out what the thing thats (push, unshift, shift, 
 var array2 = [5,9,-7,3.5]
 */
 
-var array2 = [5,9,-7,3.5];
+var array2 = [5, 9, -7, 3.5];
 array2.push(100);
 console.log(array2);
 
@@ -121,7 +109,6 @@ console.log(array2);
 array2.pop();
 console.log(array2);
 
-
 /*
 8.
 Write a JavaScript program to sort the items of an array.
@@ -129,11 +116,9 @@ Sample array : var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
 Sample Output : -4,-3,1,2,3,5,6,7,8
 */
 
-var arr11 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
-arr11.sort();
+var arr11 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+arr11.sort((a, b) => a - b);
 console.log(arr11);
-
-
 
 /* 9.Write a JavaScript function that returns rate as text
 less than 50 return ==> Fail
@@ -144,34 +129,32 @@ equal or between 80 and 89 ===> B
 equal or between 90 and 100 ===> A
 */
 
-
 function getGrade(rate) {
-    let grade;
-  
-    
-    switch (true) {
-      case (rate < 50):
-        grade = "Fail";
-        break;
-      case (rate >= 50 && rate <= 59):
-        grade = "E";
-        break;
-      case (rate >= 60 && rate <= 69):
-        grade = "D";
-        break;
-      case (rate >= 70 && rate <= 79):
-        grade = "C";
-        break;
-      case (rate >= 80 && rate <= 89):
-        grade = "B";
-        break;
-      case (rate >= 90 && rate <= 100):
-        grade = "A";
-        break;
-      default:
-        grade = "Invalid grade";  
-    }
-    return grade;
+  let grade;
+
+  switch (true) {
+    case rate < 50:
+      grade = "Fail";
+      break;
+    case rate >= 50 && rate <= 59:
+      grade = "E";
+      break;
+    case rate >= 60 && rate <= 69:
+      grade = "D";
+      break;
+    case rate >= 70 && rate <= 79:
+      grade = "C";
+      break;
+    case rate >= 80 && rate <= 89:
+      grade = "B";
+      break;
+    case rate >= 90 && rate <= 100:
+      grade = "A";
+      break;
+    default:
+      grade = "Invalid grade";
+  }
+  return grade;
 }
 
 console.log(getGrade(75));
@@ -191,12 +174,10 @@ Write a JS code to print a pattern using for loop
 
 */
 
-
-let arrs= [];
-for(let i=1 ; i<=10 ; i++){
-    arrs.push(i);
-    console.log(arrs.toString());
-    
+let arrs = [];
+for (let i = 1; i <= 10; i++) {
+  arrs.push(i);
+  console.log(arrs.toString());
 }
 
 /* factorial */
@@ -211,5 +192,11 @@ function factorialnum(num) {
     }
     factorialnum(3)
 
-
-
+function nums(num1, num2) {
+  for (let i = num1; i <= num2; i++) {
+    if (i % 2 != 0) {
+      console.log(i);
+    }
+  }
+}
+nums(10, 60);

@@ -9,8 +9,57 @@
     <script src='main.js'></script>
 </head>
 <body>
-    
 
+
+    <h1>HTML DOM Events</h1>
+    <h2>The onmouseover Event</h2>
+    
+    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="/smileyy.jpg" alt="Smiley" width="64" height="64">
+    
+    <p>The function bigImg() is triggered when the user moves the mouse pointer over the image.</p>
+    <p>The function normalImg() is triggered when the mouse pointer is moved out of the image.</p>
+    
+    <script>
+    function bigImg(x) {
+      x.style.height = "128px";
+      x.style.width = "128px";
+    }
+    
+    function normalImg(x) {
+      x.style.height = "64px";
+      x.style.width = "64px";
+    }
+    </script>
+
+
+<h1>HTML DOM Events</h1>
+<h2>The onmouseover Event</h2>
+
+<p>Assign an "onmouseover" and "onmouseout" event to a h1 element.</p>
+
+<h1 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">Mouse over me</h1>
+
+<script>
+function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "green";
+}
+</script>
+
+
+
+
+<button onmouseover="alert('Mouse is over the button!');">Hover me</button>
+
+
+    
+    <button onmouseover="this.style.backgroundColor='lightgreen'" onmouseout="this.style.backgroundColor='lightblue'" onclick="alert('Button clicked!')">
+        Hover or Click Me
+      </button>
+      
 
     <script src="firsttask.js"></script>
 </body>
