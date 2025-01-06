@@ -1,0 +1,30 @@
+#card {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: rgb(71, 42, 165);
+    gap: 50px;
+    margin-top: 150px;
+    height: auto;
+    width: 600px;
+    margin-left: 380px;
+    justify-items: center;
+    justify-content: center;
+    padding: 50px;
+  }
+  #jo {
+    width: 400px;
+    height: 200px;
+    display: none;
+  }
+  #pa {
+    width: 400px;
+    height: 200px;
+    display: none;
+  }
+  #font{
+    font-size: 50px;
+    font-weight: bold;
+  }
+  select{
+    font-size: larger;
+  }
