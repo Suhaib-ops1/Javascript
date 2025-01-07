@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error{
+            color: red;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="validation(event)">
+        <div id="first">
+        <label for="fname">Enter Your First Name:</label><br>
+        <input type="text" name="fname" id="fname">
+        </div>
+
+        <div id="last">
+        <label for="lname">Enter Your Last Name:</label><br>
+        <input type="text" name="lname" id="lname">
+        </div>
+
+        <div  id="d">
+        <label for="BD">Enter Your BDate:</label><br>
+        <input type="text" name="BD" id="BD">
+        </div>
+
+        <div  id="e">
+        <label for="email">Enter Your Email:</label><br>
+        <input type="text" name="email" id="email">
+        </div>
+
+        <div  id="ce">
+        <label for="conEmail">Confirme your email:</label><br>
+        <input type="text" name="conEmail" id="conEmail">
+        </div>
+
+        <div id="p">
+        <label for="pws">Password:</label><br>
+        <input type="text" name="pws" id="pws">
+        </div>
+
+        <div id="cp">
+        <label for="conPws">Confirme password:</label><br>
+        <input type="text" name="conPws" id="conPws">
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="regex.js"></script>
+</body>
+</html>
