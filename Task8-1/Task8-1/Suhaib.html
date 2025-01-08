@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Example</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  
+</head>
+
+<body>
+  <div class="d-flex w-100 justify-content-center gap-2 my-3">
+
+    <div class="display-6">Suhaib Task</div>
+  </div>
+
+  <div class="d-flex w-100 justify-content-center gap-2 my-3">
+
+    <button class="btn btn-primary" onclick="CallApi( );">Call API</button>
+    <button class="btn btn-dark" onclick="CallLocally( );">Fetch Locally</button>
+
+  </div>
+  <div id="card-container" class="row w-100  justify-content-center " style="align-items: center !important"></div>
+
+  <script>
+    // JavaScript to create a card
+    function createCard(Name, Age, Email, Prof) {
+      // Create card container
+      const cardCon = document.createElement('div');
+      cardCon.classList = "col-md-2"
+
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      // Add image
+
+
+      // Add card content container
+      const content = document.createElement('div');
+      content.className = 'card-body';
+      content.style.fontSize='12px'
+
+      // Add title
+      const cardTitle = document.createElement('h5');
+      cardTitle.className = 'card-title';
+      cardTitle.textContent = Name;
+      content.appendChild(cardTitle);
+
+      // Add description
+      const cardDescription = document.createElement('p');
+      cardDescription.className = 'card-description';
+      const cardDescriptionSpanText = document.createElement('span');
+      cardDescriptionSpanText.classList = 'fw-bold'
+      cardDescriptionSpanText.textContent = ' Age :  ';
+      const cardDescriptionSpanValue = document.createElement('span');
+      cardDescriptionSpanValue.textContent = Age;
+      cardDescription.appendChild(cardDescriptionSpanText);
+      cardDescription.appendChild(cardDescriptionSpanValue);
+      content.appendChild(cardDescription);
+
+
+
+
+      // Add description
+      const cardDescription1 = document.createElement('p');
+      cardDescription1.className = 'card-description';
+
+      const cardDescriptionSpanText1 = document.createElement('span');
+      cardDescriptionSpanText1.classList = 'fw-bold'
+      cardDescriptionSpanText1.textContent = ' Email :  ';
+      const cardDescriptionSpanValue1 = document.createElement('span');
+      cardDescriptionSpanValue1.textContent = Email;
+
+      cardDescription1.appendChild(cardDescriptionSpanText1);
+      cardDescription1.appendChild(cardDescriptionSpanValue1);
+      content.appendChild(cardDescription1);
+
+
+
+      // Add description
+      const cardDescription2 = document.createElement('p');
+      cardDescription2.className = 'card-description';
+      content.appendChild(cardDescription2);
+      const cardDescriptionSpanText2 = document.createElement('span');
+      cardDescriptionSpanText2.classList = 'fw-bold'
+      cardDescriptionSpanText2.textContent = ' Profession :  ';
+      const cardDescriptionSpanValue2 = document.createElement('span');
+      cardDescriptionSpanValue2.textContent = Prof;
+      cardDescription2.appendChild(cardDescriptionSpanText2);
+      cardDescription2.appendChild(cardDescriptionSpanValue2);
+      content.appendChild(cardDescription2);
+
+
+
+
+
+      // Append content to card
+      card.appendChild(content);
+      cardCon.appendChild(card);
+
+      // Add card to the container
+      document.getElementById('card-container').appendChild(cardCon);
+    }
+
+    let Resdata;
+
+    async function fetchJSONData() {
+
+      await fetch('https://api.npoint.io/9bbef27f36e583d43d9b', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(
+
+          data => { FillData(data) }
+        )
+        .catch(error => console.error('There was a problem with the fetch operation:', error));
+
+    }
+
+
+    function FillData(data) {
+      Resdata = data
+    }
+    function FillCards() {
+      console.log(Resdata)
+      for (const element of Resdata) {
+        createCard(element.name, element.Age, element.Email, element.Profession)
+      }
+
+
+
+    }
+    async function CallApi() {
+      await fetchJSONData();
+      FillCards();
+    }
+
+    async function CallLocally() {
+      fetch('test123.json', {})
+        .then((response) => {
+
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          return response.json();
+        })
+        .then(data => {
+          for (let i = 0; i < data.length; i++) {
+            const user = data[i];
+            createCard(user.name, user.Age, user.Email, user.Profession);
+
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          container.textContent = 'Failed to load data.';
+        });
+    }
+
+
+
+  </script>
+</body>
+
+</html>

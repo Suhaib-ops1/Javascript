@@ -50,8 +50,8 @@ function validateName(input, parentId) {
 
     let errorMessage = '';
 
-    if (input.value.length < 3 || input.value.length > 20) {
-        errorMessage = 'The minimum entry length is 3 letters, and the maximum is 20.';
+    if (input.value.length < 5 || input.value.length > 15) {
+        errorMessage = 'The minimum entry length is 5 letters, and the maximum is 15.';
     } else if (!validRegex.test(input.value)) {
         errorMessage = 'Name can only contain letters and a single quote.';
     }
